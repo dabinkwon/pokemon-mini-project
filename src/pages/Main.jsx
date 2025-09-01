@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Card } from "../component/Card";
 
-export const Main = () => {
+const Main = () => {
   const pokemonData = useSelector((state) => state.pokemon.data);
   return (
     <>
@@ -11,3 +11,4 @@ export const Main = () => {
     </>
   );
 };
+export default Main

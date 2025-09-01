@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchMultiplePokemonById } from "./thunk";
 
 export const pokemonSlice = createSlice({
-  name: "poketmon",
+  name: "pokemon",
   initialState: {
     data: [],
     loading: true,
@@ -22,3 +22,15 @@ export const pokemonSlice = createSlice({
       });
   },
 });
+
+export const favoriteSlice = createSlice({
+  name:"favorite",
+  initialState:[],
+  reducers:{
+    addToFavorite(state,action){state.push(action.payload.pokemonId)},
+    removeFromFavorite(state,action){
+      const index = state.indexOf(action.payload.pokemonId);
+      if(index!== -1) state.splice(index,1)
+    }
+  }
+})
