@@ -6,10 +6,7 @@ const Main = lazy(()=>import( "./pages/Main"))
 const Detail = lazy(()=>import( "./pages/Detail"))
 const Search = lazy(()=>import( "./pages/Search"))
 const Favorite = lazy(()=>import( "./pages/Favorite"))
-// import Main from "./pages/Main"
-// import Detail from "./pages/Detail"
-// import Search from "./pages/Search"
-// import Favorite from "./pages/Favorite"
+const NotFound = lazy(()=>import("./pages/NotFound"))
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +48,7 @@ function App() {
             <Route path="/detail/:pokemonId" element={<Detail />} />
             <Route path="/search" element={<Search />} />
             <Route path="/favorite" element={<Favorite />} />
+            <Route path="*" element={<NotFound/>}/>
           </Routes>
         </Suspense>
       </main>
